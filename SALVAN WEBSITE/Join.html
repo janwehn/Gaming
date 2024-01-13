@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;500;600;700&family=Work+Sans:wght@600&display=swap"
+    rel="stylesheet">
+
+    <title>Image</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            background-image: url(body-bg.jpg);
+            
+            
+        }
+        
+        .team-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+            background-image: url(body-bg.jpg);
+            
+        }
+
+        .team-member {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #3f1111;
+            border-radius: 8px;
+            background-color: #fefeff;
+            opacity: 0; 
+            animation: fadeIn 1s ease-in-out forwards;
+            max-width: 300px; 
+           border-color: rgb(0, 93, 122);
+            cursor: pointer;
+            TE
+           
+           
+        }
+    
+        .team-member img {
+            width: 100%; /* Make the image fill its container */
+            height: auto; /* Maintain the aspect ratio */
+            max-height: 180px; /* Set a maximum height */
+           
+        }
+        h1{
+           color: rgb(209, 247, 247);
+            text-align: center;
+            text-shadow: 2px 2px 5px rgb(174, 0, 255);
+            font-size: 2.5em;
+           
+      
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Media queries for responsiveness */
+        @media (max-width: 600px) {
+            .team-member {
+                max-width: 100%; /* Full width for smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>SALVAN SQUAD</h1>
+    <div class="team-container">
+        <a href="https://www.facebook.com/marlou.badol.7" class="btn" data-btn>
+        <div class="team-member">
+            <img src="tsang.jpg" alt="Team Member 1">
+            <h3>Tsang Malou</h3>
+            <p>Fragger/Assaulter</p>
+        </a>
+        </div>
+
+        <a href="https://www.facebook.com/james.agustin.372019" class="btn" data-btn>
+        <div class="team-member">
+            <img src="james.jpg" alt="Team Member 2">
+            <h3>Nyems</h3>
+            <p>Support Marksmen</p>
+        </a>
+        </div>
+        <a href="https://www.facebook.com/gracelmaevarron.vecino" class="btn" data-btn>
+        <div class="team-member">
+            <img src="gricil.jpg" alt="Team Member 3">
+            <h3>Menudo</h3>
+            <p>Scout/Flanker</p>
+        </a>
+        </div>
+        <a href="https://www.facebook.com/aprincess.estacio" class="btn" data-btn>
+        <div class="team-member">
+            <img src="rose.jpg" alt="Team Member 3">
+            <h3>Unli Rice</h3>
+            <p>Medic/Support</p>
+        </a>
+        </div>
+        <a href="https://www.facebook.com/argie.zapatero.5" class="btn" data-btn>
+        <div class="team-member">
+            <img src="argie.jpg" alt="Team Member 3">
+            <h3>Mang Boy</h3>
+            <p>Leader/Shoutcaller</p>
+        </a>
+        </div>
+        <a href="https://www.facebook.com/profile.php?id=100018035344139" class="btn" data-btn>
+        <div class="team-member">
+            <img src="sleep.jpg" alt="Team Member 3">
+            <h3>Nyev</h3>
+            <p>Looter/Item Management</p>
+        </a>
+    </div>
+
+</body>
+</html>

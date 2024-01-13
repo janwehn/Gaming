@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5d0d0;
+            background-image: url(body-bg.jpg);
+        }
+
+        header {
+            background-color: #b684df;
+            background-image: url(body-bg.jpg);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            margin-bottom: 20px;
+            
+          
+        }
+
+        section {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            
+           
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(248, 212, 212, 0.1);
+        }
+
+        h1 {
+            color: #f7eded;
+        }
+        h2{
+            color: #f4f4f4;
+            
+        }
+        p {
+            line-height: 1.6;
+            color: #f4f4f4;
+        }
+
+        .animate-fadeIn {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 600px) {
+            section {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Getting Started</h1>
+    </header>
+
+    <section class="animate-fadeIn">
+        <h2>THE URL</h2>
+        <p>When making a request to the PUBG API, the URL controls what data you will get back and how it will be displayed. Let’s take a look at this example URL and break down the interesting bits:
+
+            "https://api.pubg.com/shards/$platform/players?filter[playerNames]=$playerName"
+            shards/$platform - the platform shard</p>
+
+        <h2>AUTHORIZATION</h2>
+        <p>In order for the API to accept our request, we will need to send an API key via the Authorization header. More information about API keys can be found here: API Keys
+
+            The authorization string will look like this, where $api-key is your own personal API key:
+            
+            "Authorization: Bearer $api-key"</p>]
+            <h2>CONTENT NEGOTIATION</h2>
+            <p>Now we need to specify in the headers that we accept content in the format that the API returns. Clients using the API should specify that they accept responses using the application/vnd.api+json format. For convenience, we will also accept application/json since it is the default for many popular client libraries.
+
+                The content type string will look like this:
+                
+                "Accept: application/vnd.api+json"</p>
+                <h2>RANKED, SEASON, AND LIFETIME STATS</h2>
+                <p>The stats included in the participant objects within a match response show player stats in the context of that match, but it is also possible to obtain player stats for an entire season or their overall stats. You will need a playerId and a seasonId to get ranked, season, or lifetime stats.
+
+                    The Lifetime Season ID can be used to get “lifetime” stats for a player. These are the same stats that are available in-game by choosing “Overall” while viewing your season stats. They include data beginning from when the Survival Title system was launched. The first seasons for lifetime stats are division.bro.official.pc-2018-01 for PC, division.bro.official.playstation-01 for PSN, division.bro.official.xbox-01 for Xbox, and division.bro.official.console-07 for Stadia.
+                    
+                    Stadia players have separate season and lifetime stats for when they use a keyboard and mouse, and for when they use a gamepad. Gamepad stats can be queried for by using the console shard, or by using the Gamepad Filter with the stadia shard.
+                    
+                    We start by querying the seasons endpoint to get a list of seasons:
+                    
+                    GETTING SEASON IDS
+                    Query the seasons endpoint to get a list of seasons like this. Please be sure to replace ‘$platform’ with your own information:
+                    
+                    curl -g "https://api.pubg.com/shards/$platform/seasons" \
+                    -H "Authorization: Bearer $api-key" \
+                    -H "Accept: application/vnd.api+json"</p>
+    </section>
+
+</body>
+</html>
